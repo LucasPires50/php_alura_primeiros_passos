@@ -1,9 +1,11 @@
 <?php
 
-$idade = 21;
+$idade = 17;
 $nome = "Vinicius";
+$numeroDePessoas = 1;
 
-echo "Você só pode entrar se tiver a parti de 18 anos." . PHP_EOL;
+echo "Você só pode entrar se tiver a parti de 18 anos. " . PHP_EOL;
+echo "ou a parti de 16 anos acompanhado";
 
 /** 
  * OU
@@ -12,11 +14,13 @@ echo "Você só pode entrar se tiver a parti de 18 anos." . PHP_EOL;
  * 
  * E
  * if ($idade >= 18 && $nome == 'Vinicius')
- * 
+ * if ($idade >= 18 and $nome == 'Vinicius')
 */
-if ($idade >= 18 and $nome == 'Vinicius') {
+if ($idade >= 18) {
     echo "Voce tem $idade anos. Pode entrar" . PHP_EOL;
-
-    echo "E seu nome é $nome";
+} else {
+    echo "Você só tem $idade anos. Você não pode entrar";
 }
-    
+
+echo PHP_EOL;
+ECHO "Adesu!";
