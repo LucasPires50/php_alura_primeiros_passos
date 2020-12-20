@@ -7,6 +7,5 @@ $texto = "Olá Mundo"; //string
 $verdadeiro = true; // boolean
 $falso = false; // boolean
 
-
 // Irá exibir o tipo da varivel passada como parametro
 echo gettype($verdadeiro);
