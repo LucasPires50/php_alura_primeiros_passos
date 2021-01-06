@@ -16,12 +16,23 @@ $contasConrrentes = [
     ]
 ];
 
+// adicinado itens ao array acima
+$contasConrrentes[123456789666] = [
+    'titular' => 'Claidia',
+    'Saldo' => 2000
+];
+
+$contasConrrentes[] = [
+    'titular' => 'Fernado',
+    'Saldo' => 2000
+];
+
 // foreach ($contasConrrentes as $conta) {
 //     echo $conta['titular'] . PHP_EOL;
 // }
 
 foreach ($contasConrrentes as $cpf => $conta) {
-    echo $cpf . PHP_EOL;
+    echo $cpf . "  " . $conta['titular'] . PHP_EOL;
 }
 
 ?>
