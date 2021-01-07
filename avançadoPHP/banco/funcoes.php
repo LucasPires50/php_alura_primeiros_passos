@@ -24,6 +24,14 @@ function depositar(array $conta, float $valorADepositar): array{
 function exibeMensagem(string $mensagem){
     echo $mensagem . PHP_EOL;
 }
+// Se não usar o '&' é passado a copia do valor da conta
+// Mas se usar o '&' é passado exatamente o valor da conta como referencia, onde se torna possivel midificação se aplicada
+function titularComLetrasMaiusculas(array &$conta){
+    // biblioteca mbString
+    // para mudar a string para letras maiusculas
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+    
+}
 
 
 ?>

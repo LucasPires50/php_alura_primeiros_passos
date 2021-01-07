@@ -20,6 +20,8 @@ $contasConrrentes = [
     ]
 ];
 
+titularComLetrasMaiusculas($contasConrrentes['123.456.789-63']);
+
 $contasConrrentes['123.456.789-63'] = sacar($contasConrrentes['123.456.789-63'], 500);
 $contasConrrentes['123.456.789-65'] = sacar($contasConrrentes['123.456.789-65'], 500);
 
