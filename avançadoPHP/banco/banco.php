@@ -1,5 +1,10 @@
 <?php
 
+// include './funcoes.php';
+// Para gerar o erro quando o arquivo não for encontrado utilize o (require)
+// require_once -> se o arquivo já não vai retonar erro
+require './funcoes.php';
+
 $contasConrrentes = [
     '123.456.789-63' =>  [
         'titular' => 'Vinicius',
@@ -14,31 +19,6 @@ $contasConrrentes = [
         'saldo' => 300
     ]
 ];
-
-function sacar(array $conta, float $valorASacar): array{
-    if ($valorASacar > $conta['saldo']) {
-        exibeMensagem("Saldo insuficiente");
-    }else{
-        $conta['saldo'] -= 500;
-    }    
-    return $conta;
-}
-
-function depositar(array $conta, float $valorADepositar): array{
-
-    if($valorADepositar > 0){
-        $conta['saldo'] += $valorADepositar;
-        exibeMensagem("Deposito efetuado!!!!!!!!!!");
-    }else{
-        exibeMensagem("Depositos precisam ser positivo.");
-    }
-    
-    return $conta;
-}
-
-function exibeMensagem(string $mensagem){
-    echo $mensagem . PHP_EOL;
-}
 
 $contasConrrentes['123.456.789-63'] = sacar($contasConrrentes['123.456.789-63'], 500);
 $contasConrrentes['123.456.789-65'] = sacar($contasConrrentes['123.456.789-65'], 500);
