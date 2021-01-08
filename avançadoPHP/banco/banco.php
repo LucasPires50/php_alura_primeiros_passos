@@ -42,8 +42,14 @@ unset($contasConrrentes['123.456.789-65']);
 
     <dl>
     <?php foreach ($contasConrrentes as $cpf => $conta) { ?>
-        <dt><h3><?php echo $conta['titular']; ?> - <?php echo $cpf; ?></h3></dt>
-        <dd> Saldo:<?php echo $conta['saldo'] ?></dd>
+        <dt>
+            <h3>
+                <?= $conta['titular']; ?> - <?= $cpf; ?>
+            </h3>
+        </dt>
+        <dd> 
+            Saldo:<?= $conta['saldo'] ?>
+        </dd>
     </dl>
     <?php } ?>
 </body>
