@@ -29,13 +29,22 @@ $contasConrrentes['123.456.789-64'] = depositar($contasConrrentes['123.456.789-6
 
 // remove a variavel ou índice de um array da memória 
 unset($contasConrrentes['123.456.789-65']);
-
-// Inicar a lista
-echo "<ul>";
-foreach ($contasConrrentes as $cpf => $conta) {
-    exibeConta($conta);
-}
-// Fechar a lista
-echo "</ul>";
-
 ?> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    <h1>Contas Conrrentes</h1>
+
+    <dl>
+    <?php foreach ($contasConrrentes as $cpf => $conta) { ?>
+        <dt><h3><?php echo $conta['titular']; ?> - <?php echo $cpf; ?></h3></dt>
+        <dd> Saldo:<?php echo $conta['saldo'] ?></dd>
+    </dl>
+    <?php } ?>
+</body>
+</html>
