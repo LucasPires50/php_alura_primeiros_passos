@@ -28,11 +28,14 @@ $contasConrrentes['123.456.789-65'] = sacar($contasConrrentes['123.456.789-65'],
 $contasConrrentes['123.456.789-64'] = depositar($contasConrrentes['123.456.789-64'], 900);
 
 foreach ($contasConrrentes as $cpf => $conta) {
+    // função list
+    //list('titular' => $titular, 'saldo'  => $saldo) = $conta;
+    ['titular' => $titular, 'saldo'  => $saldo] = $conta;
     // Dados simples- interpolação de strings
     // exibeMensagem("$cpf  $conta[titular]  $conta[saldo]");
 
     //Dados complexa -interpolação de strings
-    exibeMensagem("$cpf  {$conta['titular']} {$conta['saldo']}");
+    exibeMensagem("$cpf  $titular $saldo");
 }
 
 ?> 
