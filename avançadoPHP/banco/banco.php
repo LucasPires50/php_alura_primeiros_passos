@@ -27,6 +27,9 @@ $contasConrrentes['123.456.789-65'] = sacar($contasConrrentes['123.456.789-65'],
 
 $contasConrrentes['123.456.789-64'] = depositar($contasConrrentes['123.456.789-64'], 900);
 
+// remove a variavel ou índice de um array da memória 
+unset($contasConrrentes['123.456.789-65']);
+
 foreach ($contasConrrentes as $cpf => $conta) {
     // função list
     //list('titular' => $titular, 'saldo'  => $saldo) = $conta;
