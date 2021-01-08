@@ -30,15 +30,12 @@ $contasConrrentes['123.456.789-64'] = depositar($contasConrrentes['123.456.789-6
 // remove a variavel ou índice de um array da memória 
 unset($contasConrrentes['123.456.789-65']);
 
+// Inicar a lista
+echo "<ul>";
 foreach ($contasConrrentes as $cpf => $conta) {
-    // função list
-    //list('titular' => $titular, 'saldo'  => $saldo) = $conta;
-    ['titular' => $titular, 'saldo'  => $saldo] = $conta;
-    // Dados simples- interpolação de strings
-    // exibeMensagem("$cpf  $conta[titular]  $conta[saldo]");
-
-    //Dados complexa -interpolação de strings
-    exibeMensagem("$cpf  $titular $saldo");
+    exibeConta($conta);
 }
+// Fechar a lista
+echo "</ul>";
 
 ?> 

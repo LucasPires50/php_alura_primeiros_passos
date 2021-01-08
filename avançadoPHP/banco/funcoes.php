@@ -22,7 +22,7 @@ function depositar(array $conta, float $valorADepositar): array{
 }
 
 function exibeMensagem(string $mensagem){
-    echo $mensagem . PHP_EOL;
+    echo $mensagem . '<br>';
 }
 // Se não usar o '&' é passado a copia do valor da conta
 // Mas se usar o '&' é passado exatamente o valor da conta como referencia(endereço onde esta variável está armazenada na memória), onde se torna possivel midificação se aplicada.
@@ -34,5 +34,8 @@ function titularComLetrasMaiusculas(array &$conta){
     
 }
 
-
+function exibeConta(array $conta) {
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular - Saldo: $saldo</li>";
+}
 ?>
