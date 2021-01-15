@@ -5,7 +5,7 @@ class Conta
     // Definir is dados da conta
     public string $cpfTitular;
     public string $nomeTitular;
-    public float $saldo;
+    public float $saldo = 0;
     
 
     // Uma função que está dentro de uma classe é chamado de método
@@ -18,5 +18,14 @@ class Conta
         }
 
     }
+
+    public function depositar(float $valorADepositar): void{
+        if($valorADepositar < 0 ){
+            echo "O valor a ser depositado tem que ser positivo!";
+        }else{
+            $this->saldo += $valorADepositar;
+        }
+    }
+
 }
 
