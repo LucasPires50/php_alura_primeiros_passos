@@ -13,7 +13,7 @@ class Conta
     {
         if($valorASacar > $this->saldo){
             echo "Saldo Indisponível";
-
+            // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
             $this->saldo -= $valorASacar;
@@ -23,7 +23,7 @@ class Conta
     {
         if($valorADepositar < 0 ){
             echo "O valor a ser depositado tem que ser positivo!";
-
+            // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
             $this->saldo += $valorADepositar;
@@ -33,7 +33,7 @@ class Conta
     {
         if($valorATransferir > $this->saldo){
             echo 'Saldo Indisponível';
-
+            // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
             $this->sacar($valorATransferir);
