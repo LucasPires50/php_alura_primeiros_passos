@@ -28,7 +28,7 @@ class Conta
         }
             $this->saldo += $valorADepositar;
     }
-    
+
     public function transferir(float $valorATransferir, Conta $contaDestino): void
     {
         if($valorATransferir > $this->saldo){
@@ -41,6 +41,7 @@ class Conta
 
     }
 
+    // Métodos que devolvem um valor são chamados de métodos get
     public function recuperSaldo(): float
     {
         return $this->saldo;
