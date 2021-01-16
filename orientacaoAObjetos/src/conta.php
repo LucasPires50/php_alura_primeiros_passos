@@ -12,7 +12,7 @@ class Conta
     public function sacar(float $valorASacar):void
     {
         if($valorASacar > $this->saldo){
-            echo "Saldo Indisponível";
+            echo "Saldo Indisponível" .PHP_EOL;
             // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
@@ -28,7 +28,7 @@ class Conta
         }
             $this->saldo += $valorADepositar;
     }
-
+    
     public function transferir(float $valorATransferir, Conta $contaDestino): void
     {
         if($valorATransferir > $this->saldo){
@@ -39,6 +39,33 @@ class Conta
             $this->sacar($valorATransferir);
             $contaDestino->depositar($valorATransferir);
 
+    }
+
+    public function recuperSaldo(): float
+    {
+        return $this->saldo;
+    }
+
+    // utiliza o void quando o método não tem retorno
+    public function definirCpfTitular(string $cpf):void
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+    public function recuperarCpfTitular(): string
+    {
+        return $this-> cpfTitular;
+    }
+
+    // utiliza o void quando o método não tem retorno
+    public function definirNomeTitular(string $nome):void
+    {
+        $this->nomeTitular = $nome;
+    }
+
+    public function recuperarNomeTitular(): string
+    {
+        return $this-> nomeTitular;
     }
 
 }
