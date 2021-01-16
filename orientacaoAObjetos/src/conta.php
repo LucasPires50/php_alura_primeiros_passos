@@ -3,9 +3,9 @@
 class Conta 
 {
     // Definir is dados da conta
-    public string $cpfTitular;
-    public string $nomeTitular;
-    public float $saldo = 0;
+    private string $cpfTitular;
+    private string $nomeTitular;
+    private float $saldo = 0;
     
 
     // Uma função que está dentro de uma classe é chamado de método
