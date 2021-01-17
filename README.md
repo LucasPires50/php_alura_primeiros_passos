@@ -1,2 +1,2 @@
-# php_alura_primeiros_passos
+# Formação PHP
  Curso PHP da Alura
