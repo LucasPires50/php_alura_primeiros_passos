@@ -14,6 +14,6 @@ $segundaConta = new Conta("789.456.123-33", "Patrica");
 
 var_dump($segundaConta);
 
-echo "Número de contas: " . Conta::recuperarNumeroDeContas();
+echo "Número de contas: " . Conta::recuperarNumeroDeContas() . PHP_EOL;
 
 ?>

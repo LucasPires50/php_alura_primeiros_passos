@@ -21,6 +21,13 @@ class Conta
         self::$numeroDeContas++;
     }
 
+    public function __destruct()
+    {
+        if(self::$numeroDeContas > 1){
+            echo "Há mais de uma conta ativas" . PHP_EOL;
+        }
+    }
+
     // Uma função que está dentro de uma classe é chamado de método
     public function sacar(float $valorASacar):void
     {
