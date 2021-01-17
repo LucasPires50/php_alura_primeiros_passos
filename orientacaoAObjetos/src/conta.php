@@ -3,18 +3,15 @@
 class Conta 
 {
     // Definir is dados da conta
-    private string $cpfTitular;
-    private string $nomeTitular;
+    private $titular;
     private float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
     
     // Método construtor, toda vez que um "new Conta()" for execuado o método construtor vai ser executado também.
-    public function __construct(string $cpfTitular, string $nomeTitular)
+    public function __construct(Titular $titular)
     {
-        $this->cpfTitular = $cpfTitular;
-        $this->validarNomeTitular($nomeTitular);
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
 
         // Sempre que executar o "new Conta()", o numero de contas vai ser impelentado
@@ -68,21 +65,12 @@ class Conta
 
     public function recuperarCpfTitular(): string
     {
-        return $this-> cpfTitular;
+        return $this->titular->recuperarCpf();
     }
 
     public function recuperarNomeTitular(): string
     {
-        return $this-> nomeTitular;
-    }
-
-    private function validarNomeTitular(string $nomeTitular)
-    {
-        // strlen -> pega a quantidade de caracteres 
-        if(strlen($nomeTitular) < 5){
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
-        }
+        return $this->titular->recuperarNome();
     }
 
     // Método estático da classe, que não muda de instancia para instancia
