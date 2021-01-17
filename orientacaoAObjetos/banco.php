@@ -2,9 +2,8 @@
 
 require_once 'src/Conta.php';
 
-$primeriaConta = new Conta();
-$primeriaConta->definirNomeTitular("Lucas");
-$primeriaConta->definirCpfTitular("123.456.789-99");
+$primeriaConta = new Conta("123.456.789-99", "Lucas");
+var_dump($primeriaConta);
 $primeriaConta->depositar(500);
 $primeriaConta->sacar(300);
 

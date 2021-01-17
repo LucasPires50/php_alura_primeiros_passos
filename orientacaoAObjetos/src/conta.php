@@ -7,6 +7,13 @@ class Conta
     private string $nomeTitular;
     private float $saldo = 0;
     
+    // Método construtor, toda vez que um "new Conta()" for execuado o método construtor vai ser executado também.
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+        $this->saldo = 0;
+    }
 
     // Uma função que está dentro de uma classe é chamado de método
     public function sacar(float $valorASacar):void
