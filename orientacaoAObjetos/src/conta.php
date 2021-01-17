@@ -5,7 +5,9 @@ class Conta
     // Definir is dados da conta
     private string $cpfTitular;
     private string $nomeTitular;
-    private float $saldo = 0;
+    private float $saldo;
+    // Atributo estático da classe
+    private static $numeroDeContas = 0;
     
     // Método construtor, toda vez que um "new Conta()" for execuado o método construtor vai ser executado também.
     public function __construct(string $cpfTitular, string $nomeTitular)
@@ -14,6 +16,9 @@ class Conta
         $this->validarNomeTitular($nomeTitular);
         $this->nomeTitular = $nomeTitular;
         $this->saldo = 0;
+
+        // Sempre que executar o "new Conta()", o numero de contas vai ser impelentado
+        self::$numeroDeContas++;
     }
 
     // Uma função que está dentro de uma classe é chamado de método
@@ -73,6 +78,12 @@ class Conta
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
         }
+    }
+
+    // Método estático da classe, que não muda de instancia para instancia
+    public static function recuperarNumeroDeContas(): int
+    {
+        return self::$numeroDeContas;
     }
 
 }
