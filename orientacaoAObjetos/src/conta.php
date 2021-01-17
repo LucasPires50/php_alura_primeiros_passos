@@ -55,21 +55,9 @@ class Conta
         return $this->saldo;
     }
 
-    // utiliza o void quando o método não tem retorno
-    public function definirCpfTitular(string $cpf):void
-    {
-        $this->cpfTitular = $cpf;
-    }
-
     public function recuperarCpfTitular(): string
     {
         return $this-> cpfTitular;
-    }
-
-    // utiliza o void quando o método não tem retorno
-    public function definirNomeTitular(string $nome):void
-    {
-        $this->nomeTitular = $nome;
     }
 
     public function recuperarNomeTitular(): string
