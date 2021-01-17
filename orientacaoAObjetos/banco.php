@@ -2,8 +2,11 @@
 
 require_once 'src/Conta.php';
 require_once 'src/Titular.php';
+require_once 'src/CPF.php';
 
-$primeriaConta = new Conta( new Titular ("123.456.789-99", "Lucas"));
+
+$lucas = new Titular (new CPF("123.456.789-99"), "Lucas");
+$primeriaConta = new Conta($lucas);
 $primeriaConta->depositar(500);
 $primeriaConta->sacar(300);
 
@@ -11,9 +14,13 @@ echo "Titular: {$primeriaConta->recuperarNomeTitular()}" .PHP_EOL;
 echo "Cpf: {$primeriaConta->recuperarCpfTitular()}" .PHP_EOL;
 echo "Saldo da conta: {$primeriaConta->recuperSaldo()}" .PHP_EOL;
 
-$segundaConta = new Conta(new Titular("789.456.123-33", "Patrica"));
+$patricia = new Titular(new CPF("789.456.123-33"), "Patrica");
+$segundaConta = new Conta($patricia);
 
 var_dump($segundaConta);
+
+$jorge = new Titular(new CPF("456.123.789-85"), "Patrica");
+$segundaConta = new Conta($jorge);
 
 echo "Número de contas: " . Conta::recuperarNumeroDeContas() . PHP_EOL;
 

@@ -1,11 +1,10 @@
 <?php
-
 class Titular
 {
-    private string $cpf;
+    private CPF $cpf;
     private string $nome;
 
-    public function __construct(string $cpf, string $nome)
+    public function __construct(CPF $cpf, string $nome)
     {
         $this->cpf = $cpf;
         $this->validarNomeTitular($nome);
@@ -14,7 +13,7 @@ class Titular
 
     public function recuperarCpf(): string
     {
-        return $this->cpf;
+        return $this->cpf->recuperarNumero();
     }
 
     public function recuperarNome(): string
