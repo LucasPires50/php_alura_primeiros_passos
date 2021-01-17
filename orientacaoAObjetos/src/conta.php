@@ -66,8 +66,9 @@ class Conta
         return $this-> nomeTitular;
     }
 
-    public function validarNomeTitular(string $nomeTitular)
+    private function validarNomeTitular(string $nomeTitular)
     {
+        // strlen -> pega a quantidade de caracteres 
         if(strlen($nomeTitular) < 5){
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
