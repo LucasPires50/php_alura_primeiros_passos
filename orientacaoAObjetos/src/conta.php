@@ -23,9 +23,7 @@ class Conta
 
     public function __destruct()
     {
-        if(self::$numeroDeContas > 1){
-            echo "Há mais de uma conta ativas" . PHP_EOL;
-        }
+        self::$numeroDeContas--;
     }
 
     // Uma função que está dentro de uma classe é chamado de método
