@@ -4,10 +4,9 @@ class Titular extends Pessoa
     private Endereco $endereco;
 
     public function __construct(CPF $cpf, string $nome, Endereco $endereco)
-    {
-        $this->cpf = $cpf;
-        $this->validarNomeTitular($nome);
-        $this->nome = $nome;
+    {   
+        // Chamando o construtor da classe base(Pessoa)
+        parent::__construct($nome, $cpf);
         $this->endereco = $endereco;
     }
 
