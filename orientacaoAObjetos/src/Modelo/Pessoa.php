@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelo;
+
 class Pessoa
 {
     protected string $nome;
@@ -17,7 +19,7 @@ class Pessoa
         return $this->nome;
     }
 
-    public function recuperarCpf(): CPF
+    public function recuperarCpf(): string
     {
         return $this->cpf->recuperarNumero();
     }

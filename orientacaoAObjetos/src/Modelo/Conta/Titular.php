@@ -1,4 +1,6 @@
 <?php
+namespace Modelo;
+
 class Titular extends Pessoa
 {
     private Endereco $endereco;

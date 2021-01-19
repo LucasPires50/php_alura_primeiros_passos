@@ -1,13 +1,14 @@
 <?php
+namespace Modelo;
 
-class Conta 
+class Conta
 {
     // Definir is dados da conta
     private $titular;
     private float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
-    
+
     // Método construtor, toda vez que um "new Conta()" for execuado o método construtor vai ser executado também.
     public function __construct(Titular $titular)
     {
@@ -24,37 +25,36 @@ class Conta
     }
 
     // Uma função que está dentro de uma classe é chamado de método
-    public function sacar(float $valorASacar):void
+    public function sacar(float $valorASacar): void
     {
-        if($valorASacar > $this->saldo){
-            echo "Saldo Indisponível" .PHP_EOL;
+        if ($valorASacar > $this->saldo) {
+            echo "Saldo Indisponível" . PHP_EOL;
             // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
-            $this->saldo -= $valorASacar;
+        $this->saldo -= $valorASacar;
     }
 
     public function depositar(float $valorADepositar): void
     {
-        if($valorADepositar < 0 ){
+        if ($valorADepositar < 0) {
             echo "O valor a ser depositado tem que ser positivo!";
             // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
-            $this->saldo += $valorADepositar;
+        $this->saldo += $valorADepositar;
     }
 
     // Os métodos set são os que definem um valor no atributo privado
     public function transferir(float $valorATransferir, Conta $contaDestino): void
     {
-        if($valorATransferir > $this->saldo){
+        if ($valorATransferir > $this->saldo) {
             echo 'Saldo Indisponível';
             // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
-            $this->sacar($valorATransferir);
-            $contaDestino->depositar($valorATransferir);
-
+        $this->sacar($valorATransferir);
+        $contaDestino->depositar($valorATransferir);
     }
 
     // Métodos que devolvem um valor são chamados de métodos get
@@ -78,6 +78,4 @@ class Conta
     {
         return self::$numeroDeContas;
     }
-
 }
-
