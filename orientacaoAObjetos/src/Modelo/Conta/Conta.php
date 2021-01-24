@@ -1,7 +1,8 @@
 <?php
+
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+abstract class Conta
 {
     // Definir is dados da conta
     private $titular;
@@ -27,7 +28,7 @@ class Conta
     // Uma função que está dentro de uma classe é chamado de método
     public function sacar(float $valorASacar): void
     {
-        $tarifaSaque = $valorASacar * 0.05;
+        $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $tarifaSaque + $valorASacar;
         if ($valorSaque > $this->saldo) {
             echo "Saldo Indisponível" . PHP_EOL;
@@ -45,18 +46,6 @@ class Conta
             return;
         }
         $this->saldo += $valorADepositar;
-    }
-
-    // Os métodos set são os que definem um valor no atributo privado
-    public function transferir(float $valorATransferir, Conta $contaDestino): void
-    {
-        if ($valorATransferir > $this->saldo) {
-            echo 'Saldo Indisponível';
-            // aplicado o return dessa forma não é ncessário usar o else
-            return;
-        }
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
     }
 
     // Métodos que devolvem um valor são chamados de métodos get
@@ -80,4 +69,12 @@ class Conta
     {
         return self::$numeroDeContas;
     }
+
+    /**
+     * Método abstrato.
+     * 
+     * Todas as classes que estenderem a classe conta são abirgado a implementar o método percentual tarifa.
+     */
+    abstract protected function percentualTarifa(): float;
+
 }
