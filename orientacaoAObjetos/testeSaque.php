@@ -13,7 +13,8 @@ $conta = new Conta(
         new CPF('123.456.789-99'),
         'Lucas Pires',
         new Endereco('Petrópolis', 'Bairro Teste', 'Rua Teste', '96')
-    )
+    ),
+    tipo:2
 );
 
 
