@@ -27,12 +27,14 @@ class Conta
     // Uma função que está dentro de uma classe é chamado de método
     public function sacar(float $valorASacar): void
     {
-        if ($valorASacar > $this->saldo) {
+        $tarifaSaque = $valorASacar * 0.05;
+        $valorSaque = $tarifaSaque + $valorASacar;
+        if ($valorSaque > $this->saldo) {
             echo "Saldo Indisponível" . PHP_EOL;
             // aplicado o return dessa forma não é ncessário usar o else
             return;
         }
-        $this->saldo -= $valorASacar;
+        $this->saldo -= $valorSaque;
     }
 
     public function depositar(float $valorADepositar): void
