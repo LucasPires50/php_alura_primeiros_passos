@@ -5,20 +5,15 @@ class Conta
 {
     // Definir is dados da conta
     private $titular;
-    private float $saldo;
+    protected float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
-    /**
-     * @var int $tipo 1 == Conta Conrrete; 2 = Popança
-     */
-    private $tipo;
 
     // Método construtor, toda vez que um "new Conta()" for execuado o método construtor vai ser executado também.
-    public function __construct(Titular $titular, $tipo)
+    public function __construct(Titular $titular)
     {
         $this->titular = $titular;
         $this->saldo = 0;
-        $this->tipo = $tipo;
 
         // Sempre que executar o "new Conta()", o numero de contas vai ser impelentado
         self::$numeroDeContas++;
@@ -32,11 +27,7 @@ class Conta
     // Uma função que está dentro de uma classe é chamado de método
     public function sacar(float $valorASacar): void
     {
-        if($this->tipo === 1){
-            $tarifaSaque = $valorASacar * 0.05;
-        } else {
-            $tarifaSaque = $valorASacar * 0.03;
-        }
+        $tarifaSaque = $valorASacar * 0.05;
         $valorSaque = $tarifaSaque + $valorASacar;
         if ($valorSaque > $this->saldo) {
             echo "Saldo Indisponível" . PHP_EOL;
