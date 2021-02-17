@@ -1,13 +1,9 @@
 <?php
 
 require_once 'autoload.php';
-
-use Alura\Banco\Modelo\Conta\Titular;
-use Alura\Banco\Modelo\Endereco;
-use Alura\Banco\Modelo\CPF;
-use Alura\Banco\Modelo\Conta\Conta;
-use Alura\Banco\Modelo\Conta\ContaConrrente;
-use Alura\Banco\Modelo\Conta\ContaPoupanca;
+// Quando as classes tem o mesmo namespace, da para colocar tudo em uma única linha entre chaves. 
+use Alura\Banco\Modelo\{Endereco, CPF};
+use Alura\Banco\Modelo\Conta\{Conta, ContaConrrente, ContaPoupanca,Titular};
 
 
 $conta = new ContaConrrente(
