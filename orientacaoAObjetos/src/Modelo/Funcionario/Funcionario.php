@@ -37,10 +37,8 @@ abstract class Funcionario extends Pessoa
        return $this->salario += $valorAumento;
     }
 
-    public function calcularBonificacao(): float
-    {
-        return $this->salario * 0.1;
-    }
+    // todas as classe que extenderem funcionário, seram obrigadas a ter esse método abstrado
+    abstract public function calcularBonificacao():float;
 }
 
 
