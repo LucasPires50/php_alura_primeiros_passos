@@ -34,4 +34,10 @@ class Endereco
         return $this->numero;
    }
 
+// Com esse método mágico conseguimos representar qualquer objeto como uma string;
+   public function __toString(): string
+   {
+     return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
+   }
+
 } 
