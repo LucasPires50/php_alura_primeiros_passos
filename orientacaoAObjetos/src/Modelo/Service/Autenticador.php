@@ -2,13 +2,13 @@
 
 namespace Alura\Banco\Modelo\Service;
 
-use Alura\Banco\Modelo\Funcionario\Diretor;
+use Alura\Banco\Modelo\Autenticavel;
 
 class Autenticador
 {
-    public function tentaLogin(Diretor $diretor, string $senha): void
+    public function tentaLogin(Autenticavel $autenticaveldiretor, string $senha): void
     {
-        if($diretor->podeAutenticar($senha)){
+        if($autenticaveldiretor->podeAutenticar($senha)){
             echo 'OK. Usuário logado no sistema';
         }else{
             echo 'Senha incorreta.';
