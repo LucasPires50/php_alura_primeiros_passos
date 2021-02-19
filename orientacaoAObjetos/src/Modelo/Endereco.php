@@ -2,7 +2,8 @@
 
 namespace Alura\Banco\Modelo;
 
-Class Endereco
+// mclasse finalnão pode ser sobreescrito
+final Class Endereco
 {
     private string $cidade;
     private string $bairro;

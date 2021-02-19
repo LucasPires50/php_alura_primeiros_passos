@@ -1,7 +1,8 @@
 <?php
 namespace Alura\Banco\Modelo;
 
-class CPF
+// mclasse finalnão pode ser sobreescrito
+final class CPF
 {
 
     private $numero;

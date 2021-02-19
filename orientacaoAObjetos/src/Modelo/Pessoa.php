@@ -9,7 +9,7 @@ abstract class Pessoa
 
     public function __construct(string $nome, CPF $cpf)
     {
-        $this->validarNomeTitular($nome);
+        $this->validarNome($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
@@ -24,8 +24,8 @@ abstract class Pessoa
         return $this->cpf->recuperarNumero();
     }
 
-    
-    protected function validarNomeTitular(string $nomeTitular)
+    // método finalnão pode ser sobreescrito
+    final protected function validarNome(string $nomeTitular)
     {
         // strlen -> pega a quantidade de caracteres 
         if(strlen($nomeTitular) < 5){
