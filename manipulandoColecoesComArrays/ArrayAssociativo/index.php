@@ -45,6 +45,12 @@ $relacionados["Mateus"] = 4500;
 
 echo "<pre>";
 var_dump($relacionados);
-echo "O saldo da Maria é {$relacionados["Maria"]}";
 echo "</pre>";
+
+// função para verificar se a chave existe no array
+if(array_key_exists("Joao", $relacionados)){
+    echo "O saldo da Joao é {$relacionados["Joao"]}";
+} else {
+    echo "Não foi encontrado";
+}
 ?>
