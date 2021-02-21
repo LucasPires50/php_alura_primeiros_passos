@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-require "ArrayUtils.php";
+namespace AluraArray;
+
+require 'autoload.php';
 
 $correntistaECompras = [
 
