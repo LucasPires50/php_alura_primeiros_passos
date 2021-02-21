@@ -19,7 +19,7 @@ echo "<pre>";
 var_dump($correntistaECompras);
 
 // Forma de chamar o método static 
-ArrayUtils::remover("João", $correntistaECompras);
+ArrayUtils::remover("Giovanni", $correntistaECompras);
 
 var_dump($correntistaECompras);
 
