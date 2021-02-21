@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 require "ArrayUtils.php";
 
@@ -19,7 +20,7 @@ echo "<pre>";
 var_dump($correntistaECompras);
 
 // Forma de chamar o método static 
-ArrayUtils::remover("Giovanni", $correntistaECompras);
+ArrayUtils::remover(12, $correntistaECompras);
 
 var_dump($correntistaECompras);
 
