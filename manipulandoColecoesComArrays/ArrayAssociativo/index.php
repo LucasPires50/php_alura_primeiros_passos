@@ -1,5 +1,9 @@
 <?php
 
+namespace AluraArrayAssociativo;
+
+require 'autoload.php';
+
 echo "<h1>Função array_diff</h1>";
 
 $conrrentistas = [
@@ -35,6 +39,7 @@ $saldos = [
     8700,
     9000
 ];
+
 // a função juntas os arrays, e retornar um novo array
 $juntaArray = array_merge($conrrentistas, $saldos);
 
@@ -53,4 +58,21 @@ if(array_key_exists("Joao", $relacionados)){
 } else {
     echo "Não foi encontrado";
 }
-?>
+
+// O array associativo também pode ser declarado dessa formas
+$conrrentistas2 = [
+    "Giovanni" => 2500,
+    "João" => 3000,
+    "Maria" => 4400,
+    "Luis" => 1000,
+    "Luisa" => 8700,
+    "Rafael" => 9000
+];
+
+echo "<h1>Iterando sobre arrays associativos</h1>";
+
+$maiores =  ArrayUtils::encontrarPessoasComSaldoMaior(3000, $relacionados);
+
+echo "<pre>";
+var_dump($maiores);
+echo "</pre>";

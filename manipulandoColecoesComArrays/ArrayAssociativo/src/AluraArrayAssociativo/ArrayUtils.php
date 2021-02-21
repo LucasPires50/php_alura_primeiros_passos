@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace AluraArray;
+namespace AluraArrayAssociativo;
 
 class ArrayUtils
 {
