@@ -3,6 +3,12 @@
 function funcao1()
 {
     echo 'Entrei na função 1' . PHP_EOL;
+    // Função para deixar um array com o tamanho fixo
+    // $arrayFixo = new SplFixedArray(2);
+    // $arrayFixo[3] ='Valor'; 
+
+    // Esse função sempre trata os numeros com inteiros
+    $divisao = intdiv(5, 0 );
     funcao2();
     echo 'Saindo da função 1' . PHP_EOL;
 }
