@@ -5,8 +5,14 @@ function funcao1()
     echo 'Entrei na função 1' . PHP_EOL;
     try {
         funcao2();
-    } catch (RuntimeException $problema) {
-        echo 'Na função 1, eu resolvi o problema da função 2' . PHP_EOL;
+    // multiCatch - pegar varios problçemas de uma vez só
+    } catch (RuntimeException | DivisionByZeroError $erroOuExcecao) {
+        // Exibir a mensagen do erro.
+        echo $erroOuExcecao->getMessage() . PHP_EOL;
+        // Exibir a linha no erro
+        echo $erroOuExcecao->getLine(). PHP_EOL;
+        // Exibir a trilha a o momento onde o erro aconteceu 
+        echo $erroOuExcecao->getTraceAsString(). PHP_EOL;
     }
     
     echo 'Saindo da função 1' . PHP_EOL;
@@ -15,6 +21,7 @@ function funcao1()
 function funcao2()
 {
     echo 'Entrei na função 2' . PHP_EOL;
+    $divisao = intdiv(5, 0);
     $arrayFixo = new SplFixedArray(2);
     $arrayFixo[3] = 'Valor';
     for ($i = 0; $i <= 5; $i++) {
