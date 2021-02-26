@@ -17,7 +17,7 @@ final class CPF
 
         if($numero === false){
             echo "CPF inválido" . PHP_EOL;
-            exit;
+            exit();
         };
 
         $this->numero = $numero;
