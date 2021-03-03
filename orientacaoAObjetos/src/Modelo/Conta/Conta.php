@@ -5,7 +5,7 @@ namespace Alura\Banco\Modelo\Conta;
 abstract class Conta
 {
     // Definir is dados da conta
-    private $titular;
+    private string $titular;
     protected float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
