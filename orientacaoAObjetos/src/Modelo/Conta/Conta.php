@@ -5,7 +5,7 @@ namespace Alura\Banco\Modelo\Conta;
 abstract class Conta
 {
     // Definir is dados da conta
-    private string $titular;
+    private $titular;
     protected float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
@@ -31,9 +31,7 @@ abstract class Conta
         $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $tarifaSaque + $valorASacar;
         if ($valorSaque > $this->saldo) {
-            echo "Saldo Indisponível" . PHP_EOL;
-            // aplicado o return dessa forma não é ncessário usar o else
-            return;
+            throw new SaldoInsuficienteException();
         }
         $this->saldo -= $valorSaque;
     }
