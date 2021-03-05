@@ -39,9 +39,7 @@ abstract class Conta
     public function depositar(float $valorADepositar): void
     {
         if ($valorADepositar < 0) {
-            echo "O valor a ser depositado tem que ser positivo!";
-            // aplicado o return dessa forma não é ncessário usar o else
-            return;
+            throw new \InvalidArgumentException();
         }
         $this->saldo += $valorADepositar;
     }
