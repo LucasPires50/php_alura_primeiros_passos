@@ -5,7 +5,7 @@ namespace Alura\Banco\Modelo\Conta;
 abstract class Conta
 {
     // Definir is dados da conta
-    private $titular;
+    private Titular $titular;
     protected float $saldo;
     // Atributo estático da classe
     private static $numeroDeContas = 0;
@@ -31,7 +31,7 @@ abstract class Conta
         $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $tarifaSaque + $valorASacar;
         if ($valorSaque > $this->saldo) {
-            throw new SaldoInsuficienteException();
+            throw new SaldoInsuficienteException($valorSaque, $this->saldo);
         }
         $this->saldo -= $valorSaque;
     }
@@ -74,5 +74,4 @@ abstract class Conta
      * Todas as classes que estenderem a classe conta são abirgado a implementar o método percentual tarifa.
      */
     abstract protected function percentualTarifa(): float;
-
 }

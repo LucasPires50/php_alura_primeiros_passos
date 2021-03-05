@@ -3,7 +3,7 @@
 require_once 'autoload.php';
 // Quando as classes tem o mesmo namespace, da para colocar tudo em uma única linha entre chaves. 
 use Alura\Banco\Modelo\{Endereco, CPF};
-use Alura\Banco\Modelo\Conta\{Conta, ContaConrrente, ContaPoupanca,Titular};
+use Alura\Banco\Modelo\Conta\{Conta, ContaConrrente, ContaPoupanca, SaldoInsuficienteException, Titular};
 
 
 $conta = new ContaConrrente(
@@ -16,7 +16,13 @@ $conta = new ContaConrrente(
 
 
 $conta->depositar(500);
-$conta->sacar(100);
+try {
+    $conta->sacar(600);
+} catch (SaldoInsuficienteException $exception){
+    echo "Você não tem saldo para realizar este saque.". PHP_EOL;
+    echo $exception->getMessage();
+}
+
 
 echo $conta->recuperSaldo();
 
