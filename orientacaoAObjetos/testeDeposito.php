@@ -5,14 +5,17 @@ require_once 'autoload.php';
 use Alura\Banco\Modelo\{Endereco, CPF};
 use Alura\Banco\Modelo\Conta\{Conta, ContaConrrente, ContaPoupanca, SaldoInsuficienteException, Titular};
 
-
-$contaConrrente = new ContaConrrente(
-    new Titular(
-        new CPF('123.456.789-99'),
-        'Lucas Pires',
-        new Endereco('Petrópolis', 'Bairro Teste', 'Rua Teste', '96')
-    )
-);
+try{
+    $contaConrrente = new ContaConrrente(
+        new Titular(
+            new CPF('123.456.789-56'),
+            'Luca',
+            new Endereco('Petrópolis', 'Bairro Teste', 'Rua Teste', '96')
+        )
+    );
+}catch(InvalidArgumentException $exception){
+    echo "CPF Inválido, digite o CPF corretamente.";
+}
 
 try {
     $contaConrrente->depositar(-100);

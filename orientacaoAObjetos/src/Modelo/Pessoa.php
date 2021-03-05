@@ -30,8 +30,7 @@ abstract class Pessoa
     {
         // strlen -> pega a quantidade de caracteres 
         if(strlen($nomeTitular) < 5){
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
+            throw new  NomeRegraException($nomeTitular);
         }
     }
 }
