@@ -1,0 +1,12 @@
+{
+    "name": "lucaspires50/buscador_curso",
+    "description": "Projeto que busca os cursos no site da alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lucas Pires",
+            "email": "luc_50@outlook.com"
+        }
+    ],
+    "require": {}
+}
